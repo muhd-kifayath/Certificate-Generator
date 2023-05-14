@@ -10,15 +10,15 @@
     }
     body {
       display: flex;
-      justify-content: center;
-      align-items: center;
+      flex-direction: column; 
+      justify-content: space-between; 
       min-height: 100vh;
       font-family: Arial, sans-serif;
-      background-color: #000;
+      background-color: rgb(36,41,51);
     }
     .container {
       width: 500px;
-      margin: 0 auto;
+      margin: 30px auto;
       padding: 40px;
       background: radial-gradient(circle, rgba(23, 23, 23, 0.9) 0%, rgba(0, 0, 0, 0.9) 100%);
       border-radius: 10px;
@@ -108,6 +108,29 @@
     box-shadow: 0 0 5px rgba(30, 144, 255, 0.3);
   }
 }
+.link {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease, font-size 0.3s ease;
+  }
+
+  .link:hover {
+    /* color: aqua; */
+    font-size: 1.2em;
+    animation: bounce 0.3s;
+  }
+
+  @keyframes bounce {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
   </style>
 </head>
 <body>
@@ -133,7 +156,11 @@
       <div class="form-group">
         <button type="submit">Sign Up</button>
       </div>
+      <a href="/login" class="link">Already a member? Login</a>
     </form>
   </div>
+  <footer style="text-align: center; margin-bottom: 20px; color: #fff;">
+    &copy; 2023 All rights reserved by Microsoft Innovation Club Vit Chennai
+  </footer>
 </body>
 </html>
