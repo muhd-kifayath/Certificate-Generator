@@ -208,9 +208,12 @@
       border-color: #1effe9;
       border-width: 5px;
     }
-    .form-group button {
-  width: 100%;
-  padding: 12px;
+    .form-group a {
+      display: block;
+      width: 420px;
+      padding: 12px;
+      text-decoration: none;
+
   background-color: #1e90ff;
   color: #fff;
   border: none;
@@ -224,12 +227,14 @@
   font-size: 16px;
 }
 
-.form-group button:hover {
+.form-group a:hover {
   background-color: #007fff;
   transform: translateY(5px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   animation: glowing-border 1.5s infinite;
 }
+
+
 
 @keyframes glowing-border {
   0% {
@@ -272,7 +277,8 @@ p{
         <input type="password" id="password" name="password" required>
       </div>
       <div class="form-group">
-        <button type="submit">Login</button>
+        <a href="/landing" role="button">Login</a>
+        <!-- <button><a href="/landing" class="button-link">Login</a></button> -->
       </div>
       <a href="/signup" class="link">New Here? SignUp</a>
     </form>
