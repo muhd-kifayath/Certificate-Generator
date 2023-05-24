@@ -1,6 +1,7 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template,request, redirect, url_for
 from . import db
 from flask_login import login_required, current_user
+from .models import User, Event
 
 
 
@@ -15,6 +16,23 @@ def index():
 
 def profile():
     return render_template('dashboard.html', name=current_user.username)
+
+@app.route('/create_event', methods=['POST'])
+@login_required
+
+def create_event():
+    event_name = request.form.get('event_name')
+    brandings = request.form.get('brandings')
+    authorized_signatory = "Sample"
+    participants = "Sample participant"
+    winners = "Sample winner"
+
+    event = Event(event_name=event_name, brandings=brandings, authorized_signatory=authorized_signatory,participants=participants,winners=winners)
+    db.session.add(event)
+    db.session.commit()
+    # password = request.form.get('password')
+    return redirect(url_for('app.index'))
+
 
 
 
